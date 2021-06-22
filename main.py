@@ -9,7 +9,7 @@ import cv2
 np.set_printoptions(suppress=True)
 
 # Load the model
-model = tensorflow.keras.models.load_model('keras_model.h5')
+model = tensorflow.keras.models.load_model('keras_model_old.h5')
 
 # Create the array of the right shape to feed into the keras model
 # The 'length' or number of images you can put into the array is
@@ -85,7 +85,7 @@ def getWarp(img, biggest):
 ################################################################################
 # Running the predictions on the captured video input
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 while True:
     success, img = cap.read()
@@ -117,7 +117,7 @@ while True:
         prediction = model.predict(data)
         maxValue = max(prediction[0])
         # print(maxValue)
-        # cv2.imshow('resized', img)
+        cv2.imshow('resized', img)
     #else if not availabe, use the original image (for prediction)
     else:
         img = imgOriginal
