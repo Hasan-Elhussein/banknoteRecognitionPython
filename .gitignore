@@ -1,0 +1,5 @@
+# macOS stuff
+.DS_Store
+
+## Kaggle data set (veri large 3GB+)
+input/dataset
